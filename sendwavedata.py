@@ -207,7 +207,7 @@ try:
     if (Mode=='terminal'):
         print "\nPress ctrl+C to exit program\n"
     
-    if (Mode!='web')
+    if (Mode!='web'):
         print "Device serial number: %s" %(SerialNumber)
     
     header = ['Humidity', 'Radon ST avg', 'Radon LT avg', 'Temperature', 'Pressure', 'CO2 level', 'VOC level']
