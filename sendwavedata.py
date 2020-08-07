@@ -32,6 +32,8 @@ import time
 import struct
 import tableprint
 import simplejson as json
+import requests as req
+
 
 # ===============================
 # Script guards for correct usage
@@ -248,6 +250,9 @@ try:
         elif (Mode=='web'):
             json_dump = json.dumps(data)
             print(json_dump)
+            dummyData = {'id': 9,'name': 'temp: 28.4'}
+            resp = req.post('https://airthings-dev.herokuapp.com/post',dummyData)
+            print(resp.status_code)
         
         waveplus.disconnect()
         
