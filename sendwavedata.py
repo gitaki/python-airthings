@@ -242,7 +242,7 @@ try:
         # Print data
         if (Mode=='terminal'):
             print tableprint.row(data, width=12)
-        elif (Mode=='pipe'):
+        elif (Mode=='pipe' or Mode=='web'):
             print data
         
         waveplus.disconnect()
