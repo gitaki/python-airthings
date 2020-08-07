@@ -65,7 +65,7 @@ if len(sys.argv) > 3:
 else:
     Mode = 'terminal' # (default) print to terminal 
 
-if Mode!='pipe' and Mode!='terminal':
+if Mode!='pipe' and Mode!='terminal' and Mode!='web':
     print "ERROR: Invalid piping method."
     print "USAGE: read_waveplus.py SN SAMPLE-PERIOD [pipe > yourfile.txt]"
     print "    where SN is the 10-digit serial number found under the magnetic backplate of your Wave Plus."
