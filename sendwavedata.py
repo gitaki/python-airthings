@@ -31,6 +31,7 @@ import sys
 import time
 import struct
 import tableprint
+import simplejson as json
 
 # ===============================
 # Script guards for correct usage
