@@ -235,10 +235,32 @@ try:
         pressure     = str(sensors.getValue(SENSOR_IDX_REL_ATM_PRESSURE))     + " " + str(sensors.getUnit(SENSOR_IDX_REL_ATM_PRESSURE))
         CO2_lvl      = str(sensors.getValue(SENSOR_IDX_CO2_LVL))              + " " + str(sensors.getUnit(SENSOR_IDX_CO2_LVL))
         VOC_lvl      = str(sensors.getValue(SENSOR_IDX_VOC_LVL))              + " " + str(sensors.getUnit(SENSOR_IDX_VOC_LVL))
+
+        # extract just units
+        humidity_unit = str(sensors.getUnit(SENSOR_IDX_HUMIDITY))
+        radon_st_avg_unit = str(sensors.getUnit(SENSOR_IDX_RADON_SHORT_TERM_AVG))
+        radon_lt_avg_unit = str(sensors.getUnit(SENSOR_IDX_RADON_LONG_TERM_AVG))
+        temperature_unit = str(sensors.getUnit(SENSOR_IDX_TEMPERATURE))
+        pressure_unit = str(sensors.getUnit(SENSOR_IDX_REL_ATM_PRESSURE))
+        co2_lvl_unit = str(sensors.getUnit(SENSOR_IDX_CO2_LVL))
+        voc_lvl_unit = str(sensors.getUnit(SENSOR_IDX_VOC_LVL))
         
         # Construct data
         if (Mode=='web'):
-            data = {"humidity": humidity, "radon_st_avg": radon_st_avg, "radon_lt_avg": radon_lt_avg, "temperature": temperature, "pressure": pressure, "CO2_lvl": CO2_lvl, "VOC_lvl": VOC_lvl}
+            data = {"temperature": temperature,
+                    "temperature_unit": temperature_unit, 
+                    "humidity": humidity,
+                    "humidity_unit": humidity_unit, 
+                    "radon_st_avg": radon_st_avg,
+                    "radon_st_avg_unit": radon_st_avg_unit, 
+                    "radon_lt_avg": radon_lt_avg,
+                    "radon_lt_avg_unit": radon_lt_avg_unit,
+                    "pressure": pressure,
+                    "pressure_unit": pressure_unit,
+                    "co2_lvl": co2_lvl,
+                    "co2_lvl_unit": co2_lvl_unit, 
+                    "voc_lvl": voc_lvl,
+                    "voc_lvl_unit": voc_lvl_unit}
         else:
             data = [humidity, radon_st_avg, radon_lt_avg, temperature, pressure, CO2_lvl, VOC_lvl]
 
