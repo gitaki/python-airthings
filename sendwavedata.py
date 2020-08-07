@@ -250,9 +250,14 @@ try:
         elif (Mode=='web'):
             json_dump = json.dumps(data)
             print(json_dump)
-            dummyData = {'id': 9,'name': 'temp: 28.4'}
+            jsonObj = json.loads(data)
+            dummyData = {'id': 9,'name': jsonObj["temperature"]}
             resp = req.post('https://airthings-dev.herokuapp.com/post',dummyData)
-            print(resp.status_code)
+        
+        if(resp.status_code==200):
+            print('SENT OK')
+        else:
+            print('ERROR SENDING, STATUSCODE: '+resp.status_code)
         
         waveplus.disconnect()
         
