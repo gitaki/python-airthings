@@ -250,8 +250,8 @@ try:
         elif (Mode=='web'):
             json_dump = json.dumps(data)
             print(json_dump)
-            jsonObj = json.loads(data)
-            dummyData = {'id': 9,'name': jsonObj["temperature"]}
+            # jsonObj = json.loads(data)
+            dummyData = {'id': 9,'name': data["temperature"]}
             resp = req.post('https://airthings-dev.herokuapp.com/post',dummyData)
         
         if(resp.status_code==200):
