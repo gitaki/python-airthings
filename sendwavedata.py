@@ -235,15 +235,18 @@ try:
         
         # Construct data
         if (Mode=='web'):
-            data = humidity, radon_st_avg, radon_lt_avg, temperature, pressure, CO2_lvl, VOC_lvl
+            data = {"humidity": humidity, "radon_st_avg": radon_st_avg, "radon_lt_avg": radon_lt_avg, "temperature": temperature, "pressure": pressure, "CO2_lvl": CO2_lvl, "VOC_lvl": VOC_lvl}
         else:
             data = [humidity, radon_st_avg, radon_lt_avg, temperature, pressure, CO2_lvl, VOC_lvl]
 
         # Print data
         if (Mode=='terminal'):
             print tableprint.row(data, width=12)
-        elif (Mode=='pipe' or Mode=='web'):
+        elif (Mode=='pipe'):
             print data
+        elif (Mode=='web'):
+            json_dump = json.dumps(data)
+            print(json_dump)
         
         waveplus.disconnect()
         
