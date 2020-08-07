@@ -279,7 +279,7 @@ try:
         if(resp.status_code==200):
             print('SENT OK')
         else:
-            print('ERROR SENDING, STATUSCODE: '+resp.status_code)
+            print('ERROR SENDING, STATUSCODE: '+str(resp.status_code))
         
         waveplus.disconnect()
         
