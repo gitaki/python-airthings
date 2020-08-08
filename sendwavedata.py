@@ -290,7 +290,8 @@ try:
         
         waveplus.disconnect()
         
-        time.sleep(SamplePeriod)
+        exit()
+        #time.sleep(SamplePeriod)
             
 finally:
     waveplus.disconnect()
